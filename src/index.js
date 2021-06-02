@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import configureStore from "./hooks-store/product-store";
+
 //import productReducer from "./store/reducers/products";
 
 //Replacing REDUX with reactHooks ==> New learnings...
@@ -29,11 +31,14 @@ const store = createStore(rootReducer);
   document.getElementById('root')
   */
 
+configureStore();
+
 ReactDOM.render(
-  <ProductsProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ProductsProvider>,
+  //Using React HOOKS to replace REDUX & Context API
+  //<ProductsProvider>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  //</ProductsProvider>
   document.getElementById("root")
 );
